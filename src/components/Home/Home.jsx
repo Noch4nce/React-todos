@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import TodoItem from './item/TodoItem'
+import CreateTodoField from './createTodoField/CreateTodoField'
 
 const todoData = [
 	{
@@ -51,6 +52,8 @@ const Home = () => {
 					removeTodo={removeTodo}
 				/>
 			))}
+
+			<CreateTodoField setTodos={setTodos} />
 		</div>
 	)
 }

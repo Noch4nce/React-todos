@@ -21,7 +21,7 @@ const todoData = [
 
 const Home = () => {
 	return (
-		<div className="bg-gray-900 h-screen text-white">
+		<div>
 			{todoData.map((todo) => (
 				<TodoItem key={todo.id} todo={todo} />
 			))}

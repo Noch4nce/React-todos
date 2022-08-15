@@ -3,10 +3,10 @@ import Check from './Check'
 
 const TodoItem = ({ todo }) => {
 	return (
-		<div>
+		<button className="flex items-center mb-4 rounded-xl bg-zinc-800 p-5 w-full">
 			<Check />
 			{todo.title}
-		</div>
+		</button>
 	)
 }
 

@@ -18,7 +18,6 @@ const todoData = [
 		isCompleted: false
 	}
 ]
-console.log(todoData, 'ID')
 
 const Home = () => {
 	const [todos, setTodos] = useState(todoData)
@@ -31,6 +30,13 @@ const Home = () => {
 		setTodos(copy)
 	}
 
+	const removeTodo = (id) => {
+		const copy = [...todos]
+		const newData = copy.filter((todo) => todo.id !== id)
+
+		setTodos(newData)
+	}
+
 	return (
 		<div className="text-white w-4/5 mx-auto">
 			<h1 className="text-2x1 font-bold text-center mb-10">
@@ -38,7 +44,12 @@ const Home = () => {
 			</h1>
 
 			{todos.map((todo) => (
-				<TodoItem key={todo.id} todo={todo} changeTodo={changeTodo} />
+				<TodoItem
+					key={todo.id}
+					todo={todo}
+					changeTodo={changeTodo}
+					removeTodo={removeTodo}
+				/>
 			))}
 		</div>
 	)
